@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+.devcontainer/
+.poetry/
+.mypy_cache/
+.env
+migrations/
+db.sqlite3
