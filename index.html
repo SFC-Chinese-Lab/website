@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap ICON CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <title>SFC中国語研究室</title>
+  </head>
+  <body>
+    <!-- <div class="col-0 col-md-1 col-xl-2"></div> -->
+
+    <!-- fixed-topとsticky-topの違い：stickyは上に張り付いてくれるがコンテンツは -->
+    <!-- その下から表示してくれる。fixedは何も設定ないと重なって悲しいことになる。 -->
+
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow"
+    >
+      <div class="container-fluid col-12 col-md-11 col-xl-12">
+        <a class="navbar-brand col-9 col-sm-auto" href="#">
+          <img src="china-logo.png" class="img-fluid" alt="中国語研究室" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >トップページ</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-us">研究室について</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-research">中国研究関連</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#curriculum">カリキュラム</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#learning-content">学習コンテンツ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">ブログ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#notice">お知らせ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse justify-content-end">
+            <p class="mr-auto">
+              <span class="text-danger small"
+                >SFC 中国語履修者専用ホームページ</span
+              ><br />
+              言語コミュニケーション科目 | 中国語
+            </p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <img src="img/background.jpg" class="img-fluid w-100" />
+
+    <!-- <div class="container-fluid col-12 col-md-12 col-xxl-10">
+      <div class="row">
+        <div
+          id="carouselExampleInterval"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+              <img src="china1.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="china2.jpg" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+              <img src="china3.jpg" class="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div> -->
+    <div class="container col-12 col-xl-10">
+      <!-- <img src="bg_sample.jpg" class="img-fluid" alt="..." /> -->
+
+      <h1 class="mt-5" id="about-us">研究室について</h1>
+
+      <div class="row">
+        <div class="col-4 p-1 ps-sm-3 p-sm-2">
+          <a href="pages/lab.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top1.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">研究室紹介</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 p-1 p-sm-2">
+          <a href="pages/teachers.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top2.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">講師紹介</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 p-1 pe-sm-3 p-sm-2">
+          <a href="pages/tasa.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top3.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">SA/TA紹介</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <h1 class="mt-5" id="about-research">中国研究関連</h1>
+
+      <div class="row">
+        <div class="col-6 p-1 p-sm-3">
+          <a href="pages/research_groups.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top4.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">研究会紹介</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 p-1 p-sm-3">
+          <a href="pages/research_news.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top5.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">最新情報</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <h1 class="mt-5" id="curriculum">カリキュラムについて</h1>
+
+      <div class="row">
+        <div class="col-4 p-1 ps-sm-3 p-sm-2">
+          <a href="pages/courses.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top6.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">コース</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 p-1 p-sm-2">
+          <a href="pages/kakyo.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top7.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">SFC科挙</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 p-1 pe-sm-3 p-sm-2">
+          <a href="pages/study_abroad.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top8.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">海外研修</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <h1 class="mt-5" id="learning-content">学習コンテンツ</h1>
+
+      <div class="row">
+        <div class="col-4 col-sm-3 p-1 ps-sm-3 p-sm-1">
+          <a href="pages/online_study.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top9.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">オンライン自習室</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 p-sm-1">
+          <a href="pages/class_material.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top10.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">授業資料</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 p-sm-1">
+          <a href="pages/words.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top11.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">単語</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-1">
+          <a href="pages/grammar.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top12.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">文法</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-4 col-sm-3 p-1 ps-sm-3 p-sm-1">
+          <a href="pages/listening.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top13.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">リスニング</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 p-sm-1">
+          <a href="pages/pronunciation.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top14.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">発音</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 p-sm-1">
+          <a href="pages/text_sound.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top15.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">本文の音声</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-1">
+          <a href="pages/external_tests.html"
+            ><div class="card h-100 text-danger border-1 shadow">
+              <img
+                src="img/top16.png"
+                class="card-img h-100 img-fluid"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">外部試験</h5>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-5 position-relative">
+          <a href="pages/listening.html" class="text-decoration-none">
+            <img src="img/top13.png" class="img-fluid" alt="..." />
+            <div class="p-3 text-danger text-center fs-3 fw-bold">
+              リスニング
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-5 position-relative">
+          <a href="pages/pronunciation.html" class="text-decoration-none">
+            <img src="img/top14.png" class="img-fluid" alt="..." />
+            <div class="p-3 text-danger text-center fs-3 fw-bold">発音</div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-5 position-relative">
+          <a href="pages/text_sound.html" class="text-decoration-none">
+            <img src="img/top15.png" class="img-fluid" alt="..." />
+            <div class="p-3 text-danger text-center fs-3 fw-bold">
+              本文の音声
+            </div>
+          </a>
+        </div>
+        <div class="col-4 col-sm-3 p-1 pe-sm-3 p-sm-5 position-relative">
+          <a href="pages/external_tests.html" class="text-decoration-none">
+            <img src="img/top16.png" class="img-fluid" alt="..." />
+            <div
+              class="p-3 text-danger text-center fs-3 fw-bold"
+              style="text-shadow: 3px 3px 1px rgba(124, 124, 124, 0.3)"
+            >
+              外部試験
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </div>
+    <div class="bg-light py-3">
+      <div class="container col-12 col-md-11 col-xl-10">
+        <h1 class="mt-5" id="blog">ブログ</h1>
+
+        準備中です。少々お待ちください。
+      </div>
+    </div>
+    <div class="container col-12 col-md-11 col-xl-10">
+      <h1 class="mt-5" id="notice">お知らせ</h1>
+
+      <a href="#" class="text-reset text-decoration-none">
+        <div class="row">
+          <div class="col-3 col-sm-2 p-1 ps-sm-3 p-sm-1">
+            <img src="news_img/sample.jpg" class="card-img" alt="..." />
+          </div>
+          <div class="col-9 col-sm-10 p-1 p-sm-1">
+            <span class="text-danger">2022.07.10</span><br />
+            <span class="fs-3">サイトをリニューアルしました</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="news/20220628.html" class="text-reset text-decoration-none">
+        <div class="row">
+          <div class="col-3 col-sm-2 p-1 ps-sm-3 p-sm-1">
+            <img src="news_img/20220628.jpg" class="card-img" alt="..." />
+          </div>
+          <div class="col-9 col-sm-10 p-1 p-sm-1">
+            <span class="text-danger">2022.06.28</span><br />
+            <span class="fs-3"
+              >留学生・インテン3履修生交流イベントを開催しました</span
+            >
+          </div>
+        </div>
+      </a>
+
+      <a href="news/20220625.html" class="text-reset text-decoration-none">
+        <div class="row">
+          <div class="col-3 col-sm-2 p-1 ps-sm-3 p-sm-1">
+            <img src="news_img/20220625.png" class="card-img" alt="..." />
+          </div>
+          <div class="col-9 col-sm-10 p-1 p-sm-1">
+            <span class="text-danger">2022.06.25</span><br />
+            <span class="fs-3"
+              >留学生・インテン3履修生交流イベントについて</span
+            >
+          </div>
+        </div>
+      </a>
+
+      <div class="d-grid">
+        <button
+          class="btn btn-outline-secondary bg-white my-3 p-3 text-dark"
+          type="button"
+          onclick="location.href='news/news.html'"
+        >
+          もっと見る
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-light py-3">
+      <div class="container col-12 col-md-11 col-xl-10">
+        <div class="row">
+          <div class="col-12 col-sm-2 ps-3">
+            <h1 id="faq">FAQ</h1>
+          </div>
+          <div class="col-12 col-sm-10 p-1">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseOne"
+                    aria-expanded="true"
+                    aria-controls="panelsStayOpen-collapseOne"
+                  >
+                    <i class="bi bi-hash"></i>
+                    &nbsp; 中国語インテンシブとは何ですか
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="panelsStayOpen-headingOne"
+                >
+                  <div class="accordion-body">
+                    インテンシブ中国語は、３学期間を通じて、研究やフィールドワークに耐える中国語の習得を目指しています。中国に関わろうとする人には必須の科目です。ネイティブと日本人のチームでクラスを担当し、着実に聞き取り力・発話力をつけるために、独自の教授法を展開します。
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo"
+                  >
+                    <i class="bi bi-hash"></i>
+                    &nbsp; 中国語ベーシックとは何ですか
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseTwo"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingTwo"
+                >
+                  <div class="accordion-body">
+                    中国語ベーシックは、いわゆる「第二外国語」としての中国語授業です。１〜３期まであり、インテンシブコースと同じテキストを使いますが、クラスの人数がインテンシブより多く（１クラス４０名）、２コマ少なくなっています（１学期２単位）。中国語文法についての知識、簡単な会話が学ぶことができます。
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseThree"
+                    aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseThree"
+                  >
+                    <i class="bi bi-hash"></i>
+                    &nbsp; 中国語スキルとは何ですか
+                  </button>
+                </h2>
+                <div
+                  id="panelsStayOpen-collapseThree"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="panelsStayOpen-headingThree"
+                >
+                  <div class="accordion-body">
+                    スキル中国語科目は、読解力、会話力、検定試験対策など技能別に中国語能力を高めるためのスキルアップ授業です。自分の中国語力に合わせていくつでも履修することができます。原則的にインテンシブ３学期修了、ベーシックⅢ修了レベルの人のための授業ですが、入学後いつでも履修可能なので、特に既習者は自分の実力に合わせて履修することが可能です。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button
+            class="btn btn-outline-secondary bg-white my-3 p-3 text-dark"
+            type="button"
+            onclick="location.href='pages/faq.html'"
+          >
+            もっと見る
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ↓containerを外すと全幅表示にできた sticky-bottomはなさそう？ -->
+    <div class="bg-dark col-12 container-fluid">
+      <div class="container col-12 col-md-11 col-xl-10">
+        <div class="text-light d-flex align-items-center" style="height: 100px">
+          Copyright(c) 2022 SFC 中国語研究室 All Rights Reserved.
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-danger bg-white rounded-circle p-0 fixed-bottom ms-auto me-4 mb-4"
+      style="width: 50px; height: 50px"
+      onclick="location.href='#'"
+    >
+      <i class="bi bi-chevron-bar-up fs-2 text-danger"></i>
+    </button>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

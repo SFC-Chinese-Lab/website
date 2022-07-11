@@ -1,0 +1,16 @@
+body {
+  line-height: 2em;
+  font-size: 1em;
+}
+h1 {
+  margin-top: 1.2em;
+}
+h2:not(.accordion-header) {
+  margin-top: 1.8em;
+}
+h3 {
+  margin-top: 1.5em;
+}
+h4 {
+  margin-top: 1.3em;
+}
