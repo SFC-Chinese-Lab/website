@@ -1,3 +1,3 @@
 RewriteEngine on
-RewriteRule ^.git(.*)$ /index.html [L,R=301]
-RewriteRule ^.old_site(.*)$ /index.html [L,R=301]
+RewriteRule ^.git(.*)$ /home/t19656sf/china-lab/ [L,R=301]
+RewriteRule ^.old_site(.*)$ /home/t19656sf/china-lab/ [L,R=301]
