@@ -1,0 +1,4 @@
+AuthName "china-lab"
+AuthType Digest
+AuthUserFile /home/t19656sf/.htdigest
+require user xuesheng
