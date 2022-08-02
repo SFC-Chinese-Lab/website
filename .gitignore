@@ -1,2 +1,5 @@
 #古いサイトはgitの管理下から除外
 .old_site/
+.akismet/
+.readme/
+.wp-multibyte-patch/
