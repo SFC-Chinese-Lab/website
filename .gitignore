@@ -2,4 +2,5 @@
 .old_site/
 .akismet/
 .readme/
+.scripts/
 .wp-multibyte-patch/
