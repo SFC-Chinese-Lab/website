@@ -15,9 +15,10 @@ RewriteCond %{REQUEST_URI} !\.js$
 RewriteCond %{REQUEST_URI} !\.jpg$
 RewriteCond %{REQUEST_URI} !\.gif$
 RewriteCond %{REQUEST_URI} !\.png$
+RewriteCond %{REQUEST_URI} !index.html$
 
 #リダイレクト
-RewriteRule ^(.*)$ / [R=301,L]
+RewriteRule ^(.*)$ /~t19656sf/china-lab/ [R=301,L]
 
 # RewriteRule ^.git(.*)$ / [L,R=301]
 # RewriteRule ^.old_site(.*)$ / [L,R=301]
