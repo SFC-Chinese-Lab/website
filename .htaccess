@@ -1,7 +1,27 @@
 RewriteEngine on
-RewriteRule ^.git(.*)$ / [L,R=301]
-RewriteRule ^.old_site(.*)$ / [L,R=301]
-RewriteRule ^.akismet(.*)$ / [L,R=301]
-RewriteRule ^.readme(.*)$ / [L,R=301]
-RewriteRule ^.scripts(.*)$ / [L,R=301]
-RewriteRule ^.wp-multibyte-patch(.*)$ / [L,R=301]
+
+RewriteBase /
+
+#除外設定
+RewriteCond %{REQUEST_URI} !(^/img/)
+RewriteCond %{REQUEST_URI} !(^/member/)
+RewriteCond %{REQUEST_URI} !(^/news/)
+RewriteCond %{REQUEST_URI} !(^/news-img/)
+RewriteCond %{REQUEST_URI} !(^/pages/)
+RewriteCond %{REQUEST_URI} !(^/style/)
+RewriteCond %{REQUEST_URI} !(^/upload/)
+RewriteCond %{REQUEST_URI} !\.css$
+RewriteCond %{REQUEST_URI} !\.js$
+RewriteCond %{REQUEST_URI} !\.jpg$
+RewriteCond %{REQUEST_URI} !\.gif$
+RewriteCond %{REQUEST_URI} !\.png$
+
+#リダイレクト
+RewriteRule ^(.*)$ / [R=301,L]
+
+# RewriteRule ^.git(.*)$ / [L,R=301]
+# RewriteRule ^.old_site(.*)$ / [L,R=301]
+# RewriteRule ^.akismet(.*)$ / [L,R=301]
+# RewriteRule ^.readme(.*)$ / [L,R=301]
+# RewriteRule ^.scripts(.*)$ / [L,R=301]
+# RewriteRule ^.wp-multibyte-patch(.*)$ / [L,R=301]
