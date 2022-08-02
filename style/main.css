@@ -14,3 +14,9 @@ h3 {
 h4 {
   margin-top: 1.3em;
 }
+
+/*トップページ アンカーリンクをクリックしたときに、固定ヘッダーに見出しが重なるのを防ぐ*/
+.top-header {
+  margin-top: -85px;
+  padding-top: 140px;
+}
