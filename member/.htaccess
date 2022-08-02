@@ -1,4 +1,4 @@
 AuthName "china-lab"
 AuthType Digest
-AuthUserFile /home/t19656sf/.htdigest
+AuthUserFile /.htdigest
 require user xuesheng
