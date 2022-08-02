@@ -1,6 +1,6 @@
 RewriteEngine on
 
-RewriteBase /
+RewriteBase /~t19656sf/china-lab/
 
 #除外設定
 RewriteCond %{REQUEST_URI} !(^/img/)
