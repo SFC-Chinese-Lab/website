@@ -5,7 +5,7 @@ RewriteBase /
 #除外設定
 RewriteCond %{REQUEST_URI} !(^/img/)
 RewriteCond %{REQUEST_URI} !(^/member/)
-RewriteCond %{REQUEST_URI} !(^/news/)
+RewriteCond %{REQUEST_URI} !(^news(.*))
 RewriteCond %{REQUEST_URI} !(^/news-img/)
 RewriteCond %{REQUEST_URI} !(^/pages/)
 RewriteCond %{REQUEST_URI} !(^/style/)
