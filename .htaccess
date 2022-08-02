@@ -1,3 +1,7 @@
 RewriteEngine on
 RewriteRule ^.git(.*)$ / [L,R=301]
 RewriteRule ^.old_site(.*)$ / [L,R=301]
+RewriteRule ^.akismet(.*)$ / [L,R=301]
+RewriteRule ^.readme(.*)$ / [L,R=301]
+RewriteRule ^.scripts(.*)$ / [L,R=301]
+RewriteRule ^.wp-multibyte-patch(.*)$ / [L,R=301]
