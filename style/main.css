@@ -20,3 +20,11 @@ h4 {
   margin-top: -85px;
   padding-top: 140px;
 }
+
+nav {
+  font-size: 17px;
+}
+
+nav p {
+  font-size: 15px;
+}
