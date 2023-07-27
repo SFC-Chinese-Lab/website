@@ -5,3 +5,4 @@
 .scripts/
 .wp-multibyte-patch/
 secdir/
+.DS_Store
