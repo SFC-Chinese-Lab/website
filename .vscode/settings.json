@@ -11,7 +11,7 @@
     "editor.autoIndent": "advanced",
     "editor.fontSize": 14,
     "material-icon-theme.activeIconPack": "react",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "vscode-pets.theme": "beach",
     "vscode-pets.throwBallWithMouse": true,
     "vscode-pets.petSize": "medium",
