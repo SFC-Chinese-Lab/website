@@ -116,7 +116,7 @@
     "liveServer.settings.port": 5501,
     "files.autoGuessEncoding": true,
     "editor.codeActionsOnSave": {
-        "source.organizeImports": true,
+        "source.organizeImports": "explicit"
     },
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
