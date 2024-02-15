@@ -1,6 +1,6 @@
 {
     // Personal
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.startupEditor": "none",
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -9,7 +9,7 @@
     "security.workspace.trust.untrustedFiles": "open",
     "workbench.iconTheme": "material-icon-theme",
     "editor.autoIndent": "advanced",
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "material-icon-theme.activeIconPack": "react",
     "window.zoomLevel": 0,
     "vscode-pets.theme": "beach",
