@@ -267,7 +267,7 @@
         </div>
       </div>
 
-            <div class="col-6 col-lg-3 p-2 p-lg-3">
+      <div class="col-6 col-lg-3 p-2 p-lg-3">
         <div class="card h-100 border-0 p-2 px-sm-5">
           <div class="ratio ratio-1x1">
             <img src="../upload/tasa_profile/tsuji.jpg" class="card-img rounded-circle shadow" alt="..." />
@@ -293,65 +293,88 @@
       <!-- どこか上部に置くCSS（<head>内など） -->
       <style>
         .table-wrap {
-          width:100%;
-          display:flex;
-          justify-content:center;
-          margin:20px 0;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
         }
+
         .schedule {
           border-collapse: collapse;
           table-layout: fixed;
-          width: 1200px; /* 列幅固定: 6列=100pxずつ */
+          width: 1200px;
+          /* 列幅固定: 6列=100pxずつ */
           text-align: center;
         }
-        .schedule th, .schedule td {
+
+        .schedule th,
+        .schedule td {
           border: 1px solid #000;
           padding: 6px;
           vertical-align: middle;
         }
-        .schedule thead th[colspan] { height: 40px; }
-        .schedule th { width:100px; }
+
+        .schedule thead th[colspan] {
+          height: 40px;
+        }
+
+        .schedule th {
+          width: 100px;
+        }
 
         /* 空欄セル用 */
-        .empty { background:#d9d9d9; }
+        .empty {
+          background: #d9d9d9;
+        }
 
         /* セル内に複数人の写真を横並びで配置 */
         .people {
-          display:flex;
-          justify-content:center;
-          align-items:center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           flex-wrap: wrap;
-          gap: 8px; /* 写真の間隔 */
+          gap: 8px;
+          /* 写真の間隔 */
         }
+
         .people figure {
-          margin:0;
-          text-align:center;
+          margin: 0;
+          text-align: center;
         }
+
         .people figcaption {
-          font-size:12px;
-          line-height:1.2;
-          margin-top:4px;
-          white-space:nowrap;
+          font-size: 12px;
+          line-height: 1.2;
+          margin-top: 4px;
+          white-space: nowrap;
         }
 
         /* 丸型アバター画像 */
         .avatar {
-          width:56px; height:56px;              /* ここを変えるとサイズ一括調整 */
-          border-radius:50%;
-          object-fit:cover; object-position:center;
-          display:block;
+          width: 56px;
+          height: 56px;
+          /* ここを変えるとサイズ一括調整 */
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center;
+          display: block;
         }
 
         /* 名前だけ置くとき用（写真なし） */
         .name-only {
-          display:inline-block;
-          font-size:14px;
+          display: inline-block;
+          font-size: 14px;
         }
 
         /* スマホで少し縮めたい場合（任意） */
         @media (max-width: 1280px) {
-          .schedule { width: 100%; }
-          .schedule th { width:auto; }
+          .schedule {
+            width: 100%;
+          }
+
+          .schedule th {
+            width: auto;
+          }
         }
       </style>
 
@@ -423,27 +446,43 @@
               <td>2限</td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/ayari.jpeg" alt="中村" loading="lazy"><figcaption>中村</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/hakota.jpg" alt="箱田" loading="lazy"><figcaption>箱田</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/ayari.jpeg" alt="中村" loading="lazy">
+                    <figcaption>中村</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/hakota.jpg" alt="箱田" loading="lazy">
+                    <figcaption>箱田</figcaption>
+                  </figure>
                 </div>
               </td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/haowen.jpg" alt="李" loading="lazy"><figcaption>李</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/ranyu.jpeg" alt="鄭" loading="lazy"><figcaption>鄭</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/rauru.jpg"  alt="滝川" loading="lazy"><figcaption>滝川</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/haowen.jpg" alt="李" loading="lazy">
+                    <figcaption>李</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/ranyu.jpeg" alt="鄭" loading="lazy">
+                    <figcaption>鄭</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/rauru.jpg" alt="滝川" loading="lazy">
+                    <figcaption>滝川</figcaption>
+                  </figure>
                 </div>
               </td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/liuyi.png" alt="陳" loading="lazy"><figcaption>陳</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/liuyi.png" alt="陳" loading="lazy">
+                    <figcaption>陳</figcaption>
+                  </figure>
                 </div>
               </td>
               <td class="empty"></td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/zhuling.jpg" alt="曽篠" loading="lazy"><figcaption>曽篠</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/ochiai.jpeg" alt="落合" loading="lazy"><figcaption>落合</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/zhulin_new.jpg" alt="曽篠" loading="lazy">
+                    <figcaption>曽篠</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/ochiai.jpeg" alt="落合" loading="lazy">
+                    <figcaption>落合</figcaption>
+                  </figure>
                 </div>
               </td>
             </tr>
@@ -453,18 +492,26 @@
               <td>3限</td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/jingwei.jpeg" alt="胥" loading="lazy"><figcaption>胥</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/rika.jpeg" alt="蒋" loading="lazy"><figcaption>蒋</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/jingwei.jpeg" alt="胥" loading="lazy">
+                    <figcaption>胥</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/rika.jpeg" alt="蒋" loading="lazy">
+                    <figcaption>蒋</figcaption>
+                  </figure>
                 </div>
               </td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/ayari.jpeg" alt="中村" loading="lazy"><figcaption>中村</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/ayari.jpeg" alt="中村" loading="lazy">
+                    <figcaption>中村</figcaption>
+                  </figure>
                 </div>
               </td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/sakuta1.jpg" alt="作田" loading="lazy"><figcaption>作田</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/sakuta1.jpg" alt="作田" loading="lazy">
+                    <figcaption>作田</figcaption>
+                  </figure>
                 </div>
               </td>
               <td class="empty"></td>
@@ -474,37 +521,57 @@
             <!-- 4限 -->
             <tr>
               <td>4限</td>
-              <td><div class="people">
-                <figure>
+              <td>
+                <div class="people">
+                  <figure>
                     <img class="avatar" src="../upload/tasa_profile/sakura.jpeg" alt="丹生谷" loading="lazy">
                     <figcaption>丹生谷</figcaption>
                   </figure>
-              </div></td>
+                </div>
+              </td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/sumi.jpg" alt="鷲見" loading="lazy"><figcaption>鷲見</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/zhuling.jpg" alt="曽篠" loading="lazy"><figcaption>曽篠</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/sumi.jpg" alt="鷲見" loading="lazy">
+                    <figcaption>鷲見</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/zhulin_new.jpg" alt="曽篠" loading="lazy">
+                    <figcaption>曽篠</figcaption>
+                  </figure>
                 </div>
               </td>
               <td class="empty"></td>
               <td class="empty"></td>
-              <td><div class="people">
-                <figure>
+              <td>
+                <div class="people">
+                  <figure>
                     <img class="avatar" src="../upload/tasa_profile/tsuji.jpg" alt="畢" loading="lazy">
                     <figcaption>畢</figcaption>
                   </figure>
-              </div></td>
+                </div>
+              </td>
             </tr>
 
             <!-- 5限 -->
             <tr>
               <td>5限</td>
-              <td><div class="people"><figure><img class="avatar" src="../upload/tasa_profile/ochiai.jpeg" alt="落合" loading="lazy"><figcaption>落合</figcaption></figure></div></td>
               <td>
                 <div class="people">
-                  <figure><img class="avatar" src="../upload/tasa_profile/ranyu.jpeg" alt="鄭" loading="lazy"><figcaption>鄭</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/rauru.jpg"  alt="滝川" loading="lazy"><figcaption>滝川</figcaption></figure>
-                  <figure><img class="avatar" src="../upload/tasa_profile/sumi.jpg" alt="鷲見" loading="lazy"><figcaption>鷲見</figcaption></figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/ochiai.jpeg" alt="落合" loading="lazy">
+                    <figcaption>落合</figcaption>
+                  </figure>
+                </div>
+              </td>
+              <td>
+                <div class="people">
+                  <figure><img class="avatar" src="../upload/tasa_profile/ranyu.jpeg" alt="鄭" loading="lazy">
+                    <figcaption>鄭</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/rauru.jpg" alt="滝川" loading="lazy">
+                    <figcaption>滝川</figcaption>
+                  </figure>
+                  <figure><img class="avatar" src="../upload/tasa_profile/sumi.jpg" alt="鷲見" loading="lazy">
+                    <figcaption>鷲見</figcaption>
+                  </figure>
                 </div>
               </td>
               <td class="empty"></td>
