@@ -119,5 +119,7 @@
 
 ## 問い合わせ先
 
--   蒋理嘉（環境情報学部 2 年）rika.shou@keio.jp
--   李浩文（政策・メディア研究科修士 1 年） tony_li.haowen@keio.jp
+-   李浩文（政策・メディア研究科修士 2 年） tony_li.haowen@keio.jp
+-   蒋理嘉（環境情報学部 3 年）rika.shou@keio.jp
+-   丹生谷咲良（環境情報学部 2 年）sniunoya@keio.jp
+-   曽篠珠伶（環境情報学部 2 年）soshino.jurin@keio.jp  
