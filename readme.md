@@ -1,125 +1,308 @@
-# 中国語研究室 Web サイトについて
+# SFC Chinese Lab — Website
 
-`/pub/WWW/china-lab`
+Server path: `/pub/WWW/china-lab`
 
-## 使用技術
+## Technologies
 
--   HTML
--   bootstrap
+- HTML
+- Bootstrap
 
-## 前提知識
+## Prerequisites
 
-以下のドキュメントは、
+This document is written for people who:
 
--   HTML の基本的な文法がわかる
--   ディレクトリの概念が理解できている
--   CUI の操作がある程度(情報基礎で習うレベル程度)できる
--   わからないことでも調べながら試行錯誤できる
+- Understand basic HTML syntax
+- Understand the concept of directories and file paths
+- Can use the command line at a basic level (equivalent to an introductory CS course)
+- Are willing to look things up and troubleshoot independently
 
-方向けに書いています。このような方に更新いただきたいです。
+## Updating the Site
 
-## サイトの更新方法
+### Process
 
-### 手続き的な話
+To ensure only accurate, appropriate information is published, follow this review flow.
 
-不用意な情報を発信しないために、良質な情報を提供するために、必ず守る。`<br>`
-先生方と HP 更新担当者、相互確認の意識で行うと良いです。
+**(1) Clone the repo** — first time only
 
--   サイトの内容など(ニュース含む)を更新したら開発用の領域（CNS の個人用領域の public_html にクローンして pull すれば良いでしょう）にアップロードしてください。
--   アップロードしたら、更新したページの URL を、専任の先生方を宛先に、SA リーダー・副リーダー・他の HP 担当・その他関係者を CC に入れ、確認依頼のメールを送信します。
--   修正事項があれば修正し再度確認依頼をかけ、OK であれば CNS サーバーの共同領域で pull して、本番環境で更新します。
+**(2) Get the latest main**
 
-### 技術的な話
+```bash
+git fetch origin
+git checkout main
+git merge origin/main
+```
 
--   github で管理しています。
--   大まかな更新方法としては、github の china-lab organization の website リポジトリに push して
--   CNS サーバーの共同領域にリモートログインして pull する形をとります。
--   git pull するときは git のアクセストークンの設定が必要で少々面倒だった記憶があります。調べたら解決法が出てくるので、根気強くやっていただければと思います、、
+**(3) Make your changes on a branch** — do this before editing anything
 
-技術的に困ったことあれば、強い知り合いに聞いていただく、ITC に問い合わせる、このドキュメントの最下部の問い合わせ先に問い合わせる、のようにしてください。
+```bash
+git checkout your-branch
+git merge main          # bring main into your branch BEFORE editing
+# (use AI or your editor to make changes)
+```
 
-## NEWS の更新方法
+**(4) Commit and push**
 
-1. news_img フォルダ内に yyyymmdd.jpg の書式で、縦横比の 16:9 バナー画像を用意する。
-2. news フォルダ内で、記事コピー用.html を複製する。複製したファイル名は yyyymmdd.html とする。
-3. ニュースタイトル（検索して見つけてください）を記入、YYYY.MM.DD を実際の日付に変更、noimage.jpg を yyyymmdd.jpg に変更（適切な画像が無かったら noimage でも良いが見栄えがよくないため極力避ける）、「ここに記事を記入」コメントアウトを記事内容で置き換える（記事内容は p タグで段落分けすると見やすくて良い。なお、全てを p タグで再び囲む必要はない）
-4. news フォルダ内の news.html の[１記事のブロックの始まり～終わり]を複製する。ファイル名含め、年月日を 3 箇所修正、タイトルを置き換える。
-5. index.html(ルートディレクトリにある)の「お知らせ」部分の記事の一番下ブロックを切り取り、3 つの記事の一番上になるように貼り付ける。ファイル名含め、年月日を 3 箇所修正、タイトルを置き換える。
-6. index.html、news/news.html、news/yyyymmdd.html が正常に更新されているか、間違いがないか確認する。
+```bash
+git commit -m "your message"
+git push
+```
 
--   同一日に複数個記事を掲載する場合は 20221221_1.html,20221221_2.html のような命名規則で掲載しています。
--   記事内の画像をレスポンシブに記事の横幅に合わせて表示させたいときは、img 要素等に「class="container-fluid"」を付けると大体のケースでレスポンシブになってくれます。
--   記事内に pdf や追加画像などを掲載する場合は news_upload フォルダに格納しています。
+**(5) Open a PR and request a review from your teammate**
+- Assign a teammate as reviewer on the PR
+- The reviewer should **approve** if everything looks correct, or **leave a comment** describing what needs to be fixed
+- Address any comments, push the fixes, and re-request review
+- If main receives new commits while your PR is waiting, repeat step 3 (`git merge main` on your branch, then `git push`) to keep your branch up to date
 
-## ディレクトリ構造
+**(6) After your PR merges → go back to step 2**
 
--   img
-    -   トップページに掲載しているバナーや、常設ページの画像など
--   member
-    -   パスワード保護をかけているページ
--   news
-    -   お知らせの各記事ページや、お知らせ一覧ページ(news.html)など
--   news_img
-    -   お知らせの各ページのサムネイル画像を格納
-    -   noimage.jpg は画像がないとき用のサムネイル
--   news_upload
-    -   お知らせの各記事に掲載する写真や pdf 格納用
--   pages
-    -   常設ページを格納
--   sound_zip
-    -   音声一括ダウンロード用 zip フォルダを格納。2023 年 3 月時点で最新（赤い先生用の本と対応している）。学習に便利なので、今後も継続してあると良いと思います。
--   style
-    -   bootstrap でどうにもならかった箇所を修正するための CSS ファイルを格納
--   upload
-    -   旧サイトのファイルを引き継いでいる、HP に必要なデータ（音声データ、プリントの pdf など）を含む雑多なフォルダ。
--   .gitignore
-    -   cns サーバーの共同領域上には古いサイトのバックアップとしてそのまま残してあるものがあるので、それらを git の管理下から除外している。
--   .htaccess
-    -   パスワード保護用
--   china-logo.png
-    -   ヘッダー用のメインバナー
-    -   ルートディレクトリにおいている意味はないので、置換等駆使してパスを変更頂き、img の中に格納して頂いてかまいません
--   index.html
-    -   トップページの本体
--   readme.md
-    -   本ドキュメント
+### Technical Notes
 
-## パスワード保護について
+- The site is managed via GitHub under the `SFC-Chinese-Lab` organization (`website` repository).
+- The general workflow is: push to GitHub → SSH into the CNS shared server → `git pull`.
+- A personal access token is required to authenticate `git pull` on the CNS server. Search online for setup instructions; it is a one-time setup.
 
--   https://www.sfc.itc.keio.ac.jp/ja/network_web_virtual2.html
--   上記 URL の「1. パスワードによる制限(Digest 認証)」に則ってパスワード認証を[member]フォルダにかけてあります。
--   著作権等の関係で、履修者以外に見せたくないコンテンツです。
--   パスワード認証をかけたいコンテンツが生じた場合は、お手数ですが[member]フォルダへのアップロードをお願いします。
--   設定しているユーザ名とパスワードはこちらには明記しませんので、誰かに聞いてください。
+If you run into technical issues, ask a knowledgeable colleague, contact the ITC help desk, or reach out to the contacts listed at the bottom of this document.
 
-## セキュリティ対策について
+## Updating NEWS Posts
 
-以下の事項を.htaccess に設定済みです。
+1. Add a 16:9 banner image named `yyyymmdd.jpg` to `news_img/YYYY/` (where `YYYY` is the 4-digit year of the post date).
+2. Duplicate `news/template.html` and save it as `news/YYYY/yyyymmdd.html`.
+3. In the new file, fill in the news title, replace `YYYY.MM.DD` with the actual date, replace `noimage.jpg` with `../../news_img/YYYY/yyyymmdd.jpg` (use `../noimage.jpg` only if no image is available — avoid this when possible), and replace the placeholder comment with the article content (use `<p>` tags for paragraphs).
+4. In `news/news.html`, duplicate the `[start of article block ~ end of article block]` section and place it at the top. Update the path (e.g., `2026/20260101.html`), date (3 places), and title.
+5. In `index.html` (root directory), cut the oldest article block from the "Notice" section and paste a new one at the top. Update the path, date (3 places), and title.
+6. Verify that `index.html`, `news/news.html`, and `news/YYYY/yyyymmdd.html` are all correct.
 
--   git の管理ファイル、管理者権限の関係で消去不可能な旧サイトのファイル、旧サイト全体のバックアップ、readme 等にアクセスするとトップページにリダイレクトするように設定
--   存在しないページやファイルにアクセスするとトップページにリダイレクトするように設定
+**Notes:**
 
-## 動画の埋め込みについて
+- If multiple articles are published on the same date, use `yyyymmdd_1.html`, `yyyymmdd_2.html`, etc. (underscore separator, not hyphen).
+- To make images inside an article scale responsively to the article width, add `class="container-fluid"` to the `<img>` element.
+- PDFs and supplementary images for news articles go in the appropriate subdirectory under `news_upload/` (see directory structure below).
 
--   CNS サーバーに直接埋め込むとサーバに負荷がかかるので、外部サービスにアップロードするようにしている
--   dropbox の場合 https://blanche-toile.com/web/website-dropbox
--   youtube の場合 再生バーの埋め込みコードからコード取得可能
--   将来的な課題として、その時の担当者に依存せずに永続的に動画をアップロードし続けれられる仕組み作りも必要だと思います。（広報/HP 用のアカウントを作るとか？）
+## Semester Update Timeline
 
-## その他
+The following is a checklist of recurring homepage maintenance tasks organized by time of year. Use this as a reference at the start of each semester.
 
--   undraw から取ってきたバナー画像の縦横比は基本的に横 5:縦 4 で統一済み
+---
 
-## 積み残し事項
+### (1) During Vacation — Kakyo (科挙) Announcements
 
--   古い HP から移植してきた箇所について、不要なタグやクラスが混じっている。部分的には修正したが、大部分は未修正。時間があれば修正していただけると嬉しいです。
--   古い HP から引き継いでいる、upload フォルダ内の不要なファイルが大量に残っている。
--   トップページのスライドショーが不安定（bootstrap のカルーセルをそのまま埋め込んでいて不具合が起きる場合があるので、抜本的改善を目指すなら別のプラグインか何かを導入する必要があると思われる。）
--   ボタンのデザイン等、細かい配色やデザインがデザインカンプに沿っていない。
+These tasks occur twice a year, during winter break and summer break.
 
-## 問い合わせ先
+#### a. Post kakyo requirements (科挙要項掲載)
 
--   李浩文（政策・メディア研究科修士 2 年） tony_li.haowen@keio.jp
--   蒋理嘉（環境情報学部 3 年）rika.shou@keio.jp
--   丹生谷咲良（環境情報学部 2 年）sniunoya@keio.jp
--   曽篠珠伶（環境情報学部 2 年）soshino.jurin@keio.jp  
+Update the kakyo page with the exam date and requirements, then publish a news post.
+
+- Upload the requirements PDF to `news_upload/kakyo/` named `{year}{s/f}_kakyo_schedule.pdf`
+- Update `pages/kakyo.html` with the new exam schedule and link to the PDF
+- Create `news/YYYY/yyyymmdd.html` for the announcement
+- Update `news/news.html` and `index.html`
+
+| Semester              | Timing        |
+| --------------------- | ------------- |
+| Spring (winter break) | Late February |
+| Fall (summer break)   | Late August   |
+
+#### b. Post kakyo results (科挙試験結果掲載)
+
+Publish the exam results after grading is complete.
+
+- Upload the results PDF to `news_upload/kakyo/` named `{year}{s/f}_kakyo_result.pdf`
+- Update `pages/kakyo.html` with a link to the results PDF
+- Create `news/YYYY/yyyymmdd.html` for the results announcement
+- Update `news/news.html` and `index.html`
+
+| Semester              | Timing             |
+| --------------------- | ------------------ |
+| Spring (winter break) | Mid–late March     |
+| Fall (summer break)   | Mid–late September |
+
+---
+
+### (2) At 教材準備会 (Teaching Materials Prep Meeting)
+
+| Semester | Timing         |
+| -------- | -------------- |
+| Spring   | Early April    |
+| Fall     | Late September |
+
+#### a. Update `pages/tasa.html`
+
+- Create a Google Form to collect each new SA's profile photo, name, year, and a one-sentence self-introduction
+- Delete the outgoing SAs' entries from `tasa.html`
+- Move their profile photos from `upload/tasa_profile/` to `upload/tasa_profile/archived/`
+- Add entries for new SAs once form responses are collected
+    - Profile photos **must be square (1:1 aspect ratio)**; save to `upload/tasa_profile/`
+- Update the current semester label on the page
+- Replace the lab attendance schedule (研究室駐在表) with a placeholder such as "調整中" (being finalized)
+
+#### b. Update `pages/teachers.html`
+
+- Similar to the TASA update above, but no Google Form is needed — the faculty will send updated information directly
+- Update profile photos in `upload/teachers/` as needed
+- Update the current semester label
+
+#### c. Update `pages/study_room.html`
+
+- Update the current semester label
+- Replace the lab attendance schedule (研究室駐在表) with a "調整中" placeholder
+
+---
+
+### (3) Beginning of Each Semester — Week 1 or 2
+
+- Replace the "調整中" placeholder in both `pages/tasa.html` and `pages/study_room.html` with the confirmed lab attendance schedule (研究室駐在表)
+- Update the QR code on `pages/study_room.html` if the linked schedule URL has changed
+
+---
+
+### (4) During the Semester — News Posts
+
+Post news articles as events occur. Typical events each semester:
+
+| Event                    | Japanese         | Notes                                                          |
+| ------------------------ | ---------------- | -------------------------------------------------------------- |
+| Event overview / kickoff | イベント概要     | Posted near the start of semester                              |
+| Campus tour              | キャンパスツアー | Photos →`news_upload/campustour/`                              |
+| Gyoza party              | 餃子パーティー   | Photos →`news_upload/gyoza/`                                   |
+| Katarukai                | 語ろう会         | Photos →`news_upload/kataru/`                                  |
+| Sungeki taikai           | 寸劇大会         | Photos →`news_upload/sungeki/`                                 |
+| Study abroad programs    | 海外研修         | Announcement only, or with photos →`news_upload/study_abroad/` |
+
+Follow the [Updating NEWS Posts](#updating-news-posts) steps for each post.
+
+---
+
+## Directory Structure
+
+```
+website/
+├── img/                    # Images used on permanent pages and the top page
+│   ├── carousel/           # Homepage slideshow background images
+│   ├── courses/            # Curriculum and course images
+│   ├── favicon/            # Site favicon
+│   ├── icons/              # Homepage navigation card icons
+│   ├── lab/                # Language lab photos
+│   ├── old/                # Outdated images kept for reference
+│   ├── pronunciation/      # Pronunciation page illustrations
+│   └── study_abroad/       # Study abroad page images
+│
+├── member/                 # Password-protected pages (see Password Protection below)
+│
+├── news/                   # News article pages and index
+│   ├── 2022/               # Articles from 2022 (filename: yyyymmdd.html)
+│   ├── 2023/               # Articles from 2023
+│   ├── 2024/               # Articles from 2024
+│   ├── 2025/               # Articles from 2025
+│   ├── 2026/               # Articles from 2026
+│   ├── news.html           # News index page (list of all articles)
+│   └── template.html       # Template to copy when creating a new article
+│
+├── news_img/               # Thumbnail images for news articles
+│   ├── 2022/ … 2026/       # Organized by year; filename format: yyyymmdd.jpg
+│   ├── noimage.jpg         # Fallback thumbnail when no image is available
+│   └── blank_sample.jpg    # Blank gray placeholder image
+│
+├── news_upload/            # Supplementary files (photos, PDFs) linked from news articles
+│   ├── kakyo/              #  files; named {year}{s/f}_kakyo_schedule/result.pdf
+│   ├── kataru/             # 語ろう event photos
+│   ├── sungeki/            # 寸劇大会 event photos
+│   ├── gyoza/              # 餃子パーティー photos
+│   ├── campustour/         # Campus tour PDFs and photos
+│   ├── study_abroad/       # Study abroad program flyers and photos
+│   ├── events/             # General event images
+│   └── tasa_boshu/         # TASA recruitment flyers
+│
+├── pages/                  # Permanent (non-news) content pages
+│   ├── listening/          # Listening exercise pages (listening*.html)
+│   ├── words/              # Vocabulary pages (words*.html)
+│   └── *.html              # Other permanent pages (teachers, courses, lab, tasa, etc.)
+│
+├── sound_zip/              # Bulk audio download ZIP files
+│                           # Current as of March 2023; corresponds to the red textbook.
+│                           # Useful for students — keep this up to date if possible.
+│
+├── style/                  # Custom CSS overrides that could not be handled by Bootstrap alone
+│
+├── upload/                 # Static assets (audio files, PDFs) used by permanent pages
+│   ├── class_material/     # Class handouts and materials
+│   ├── grammar_worksheets/ # Grammar worksheet PDFs
+│   ├── inten_sched/        # Intensive course schedule PDFs
+│   ├── lab/                # Language lab reservation files
+│   ├── legacy_misc/        # Legacy files inherited from the old site
+│   ├── listening/          # Audio files for listening exercises
+│   ├── news_assets/        # Miscellaneous assets linked from news articles
+│   ├── office_docs/        # Administrative documents
+│   ├── ohp_slides/         # OHP / slide files used in classes
+│   ├── pronunciation/      # Audio files for pronunciation exercises
+│   ├── qrcode/             # QR code images
+│   ├── study_room_sched/   # Study room schedule PDFs
+│   ├── tasa_profile/       # TASA member profile photos
+│   │   └── archived/       # Profile photos no longer listed on the TASA page
+│   ├── teachers/           # Teacher profile photos
+│   ├── textbook_audio/     # Textbook companion audio files
+│   └── words_audio/        # Audio files for vocabulary exercises
+│
+├── .gitignore              # Excludes old-site backups on the CNS server from git tracking
+├── .htaccess               # Password protection and redirect rules (see below)
+├── china-logo.png          # Main header banner image
+├── index.html              # Top page
+└── README.md               # This document
+```
+
+### `news_upload/` File Naming Convention
+
+Files in `news_upload/` follow this format:
+
+```
+{year}{semester}_{eventname}[_{order}].ext
+```
+
+| Part        | Description                                                                        |
+| ----------- | ---------------------------------------------------------------------------------- |
+| `year`      | 4-digit year (e.g.,`2025`)                                                         |
+| `semester`  | `s` = spring/haru (roughly April–August), `f` = fall/aki (roughly September–March) |
+| `eventname` | Lowercase English event name (e.g.,`sungeki`, `kakyo`, `gyoza`)                    |
+| `order`     | Integer starting from`1`; **omit `_1` if there is only one file in the group**     |
+
+Special case: kakyo files use `_schedule` and `_result` instead of a number.
+
+Examples: `2025f_sungeki_2.jpg`, `2024s_campustour.pdf`, `2023f_kakyo_schedule.pdf`
+
+## Password Protection
+
+The `member/` directory is protected by HTTP Digest authentication, configured in `.htaccess` per the CNS guide:
+https://www.sfc.itc.keio.ac.jp/ja/network_web_virtual2.html (section: "1. パスワードによる制限 (Digest 認証)")
+
+This directory holds content that should not be visible to non-enrolled students (e.g., copyrighted materials). If new restricted content is needed, upload it to `member/`. The username and password are not stored here — ask a current member.
+
+## Security Configuration
+
+The following rules are set in `.htaccess`:
+
+- Requests for git management files, unremovable legacy files, old-site backups, and `README.md` redirect to the top page.
+- Requests for nonexistent pages or files redirect to the top page.
+
+## Embedding Videos
+
+Do not upload video files directly to the CNS server — it increases server load. Use an external service instead:
+
+- **Dropbox**: See https://blanche-toile.com/web/website-dropbox for embedding instructions.
+- **YouTube**: Use the embed code from the video's share menu.
+
+A long-term goal is to set up a dedicated shared account (e.g., a lab YouTube or Dropbox account) so that video hosting does not depend on any individual member's personal account.
+
+## Miscellaneous Notes
+
+- Banner images sourced from [unDraw](https://undraw.co/) use a consistent 5:4 (width:height) aspect ratio.
+
+## Known Issues / TODOs
+
+- Some pages ported from the old site contain unnecessary legacy tags and CSS classes. Partially cleaned up, but most remain. Cleanup help is appreciated.
+- The homepage slideshow (Bootstrap carousel) can behave unstably. A proper fix would require replacing it with a dedicated slider plugin.
+- Some button designs and color choices do not match the original design mockup.
+
+## Contact
+
+- 蒋 理嘉 (Faculty of Environment and Information Studies, 4th year) — rika.shou@keio.jp
+- 林 琪渊 (Faculty of Environment and Information Studies, 3rd year) — lqywin@keio.jp
+- 楊 陶陶 (Faculty of Environment and Information Studies, 2nd year) — quovadis0907@keio.jp
