@@ -4,7 +4,9 @@ Server path: `/pub/WWW/china-lab`
 
 ## Technologies
 
-- HTML
+- AI Tools
+- CLI
+- HTML / CSS
 - Bootstrap
 
 ## Prerequisites
@@ -164,7 +166,7 @@ Post news articles as events occur. Typical events each semester:
 | Event overview / kickoff | イベント概要     | Posted near the start of semester                              |
 | Campus tour              | キャンパスツアー | Photos →`news_upload/campustour/`                              |
 | Gyoza party              | 餃子パーティー   | Photos →`news_upload/gyoza/`                                   |
-| Katarukai                | 語ろう会         | Photos →`news_upload/kataru/`                                  |
+| Katarukai                | 語る会         | Photos →`news_upload/kataru/`                                  |
 | Sungeki taikai           | 寸劇大会         | Photos →`news_upload/sungeki/`                                 |
 | Study abroad programs    | 海外研修         | Announcement only, or with photos →`news_upload/study_abroad/` |
 
