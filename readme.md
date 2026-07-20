@@ -129,6 +129,7 @@ Publish the exam results after grading is complete.
 
 #### a. Update `pages/tasa.html`
 
+- Reusable SA/TA profile and attendance-table HTML/CSS: [`TASA_STYLE_TEMPLATE.md`](TASA_STYLE_TEMPLATE.md)
 - Create a Google Form to collect each new SA's profile photo, name, year, and a one-sentence self-introduction
 - Delete the outgoing SAs' entries from `tasa.html`
 - Move their profile photos from `upload/tasa_profile/` to `upload/tasa_profile/archived/`
