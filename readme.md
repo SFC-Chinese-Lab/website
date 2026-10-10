@@ -153,7 +153,7 @@ Publish the exam results after grading is complete.
 
 ### (3) Beginning of Each Semester — Week 1 or 2
 
-- Replace the "調整中" placeholder in both `pages/tasa.html` and `pages/study_room.html` with the confirmed lab attendance schedule (研究室駐在表)
+- Replace the "調整中" placeholder in both `pages/tasa.html` and `pages/study_room.html` with the same confirmed lab attendance schedule (研究室駐在表). Each period displays only `あり` (staff on duty) or `なし` (no staff); follow [`TASA_STYLE_TEMPLATE.md`](TASA_STYLE_TEMPLATE.md) and use the shared styles in `style/main.css`.
 - Update the QR code on `pages/study_room.html` if the linked schedule URL has changed
 
 ---

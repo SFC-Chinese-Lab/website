@@ -1,6 +1,6 @@
 # SA/TA Profile and Lab Attendance Schedule Templates
 
-This file preserves the reusable HTML/CSS used in `pages/tasa.html` and `pages/study_room.html`. At the beginning of a new semester, copy the code below and replace the semester, names, photos, and profile text as needed.
+This file preserves the reusable HTML/CSS used in `pages/tasa.html` and `pages/study_room.html`. At the beginning of a new semester, replace the semester, attendance availability, names, photos, and profile text as needed. Attendance cells display only `あり` or `なし`; names and photos belong in the profile cards.
 
 ## Files That Must Be Updated Together
 
@@ -13,7 +13,7 @@ SA/TA profile cards only need to be updated in `pages/tasa.html`. Store profile 
 
 ## While the Schedule Is Being Finalized
 
-Remove the old schedule's `<style>...</style>` and `<div class="table-wrap">...</div>`, keep the heading, and use this placeholder:
+Remove the complete `<div class="attendance-table-wrap">...</div>`, keep the heading, and use this placeholder. The shared table styles remain in `style/main.css`:
 
 ```html
 <h1>20XX年度春学期 SA/TA研究室駐在表</h1>
@@ -56,187 +56,83 @@ Replace the following placeholders:
 - `Role and year`: for example, `SAリーダー 学部4年` or `修士1年`.
 - The two self-introduction lines: if only one line is needed, remove the second `<br />` and the text after it.
 
-## Attendance Schedule CSS
+## Attendance Schedule Styles
 
-After the schedule is finalized, copy this `<style>` block and the complete table in the next section below the attendance schedule heading.
+Both pages load the shared attendance table styles from `style/main.css`. Use `.attendance-table-wrap` for the wrapper and `.attendance-table` for the table. The table fits the page width on desktop and mobile. Header cells have a light gray background; cells with `なし` use `.attendance-unavailable` and a darker gray background.
 
-```html
-<style>
-  .table-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
+## Availability Cells
 
-  .schedule {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 1200px;
-    text-align: center;
-  }
-
-  .schedule th,
-  .schedule td {
-    border: 1px solid #000;
-    padding: 6px;
-    vertical-align: middle;
-  }
-
-  .schedule thead th[colspan] {
-    height: 40px;
-  }
-
-  .schedule th {
-    width: 100px;
-  }
-
-  /* Gray cell for a period with no staff on duty */
-  .empty {
-    background: #d9d9d9;
-  }
-
-  /* Arrange multiple people in the same period horizontally */
-  .people {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .people figure {
-    margin: 0;
-    text-align: center;
-  }
-
-  .people figcaption {
-    font-size: 12px;
-    line-height: 1.2;
-    margin-top: 4px;
-    white-space: nowrap;
-  }
-
-  .avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-  }
-
-  .name-only {
-    display: inline-block;
-    font-size: 14px;
-  }
-
-  @media (max-width: 1280px) {
-    .schedule {
-      width: 100%;
-    }
-
-    .schedule th {
-      width: auto;
-    }
-  }
-</style>
-```
-
-## Staff Member Blocks
-
-When a photo is available, place the complete `<figure>...</figure>` block below inside the appropriate cell's `<div class="people">`. Replace the photo filename, `alt` text, and display name. To show multiple people in one cell, add multiple `<figure>` blocks one after another.
+For a period with at least one staff member on duty, use:
 
 ```html
-<figure>
-  <img
-    class="avatar"
-    src="../upload/tasa_profile/photo-file.jpg"
-    alt="Name"
-    loading="lazy"
-  />
-  <figcaption>Display name</figcaption>
-</figure>
+<td>あり</td>
 ```
 
-When no photo is available, use this block to display only the person's name:
+For a period with no staff on duty, use:
 
 ```html
-<span class="name-only">Display name</span>
+<td class="attendance-unavailable">なし</td>
 ```
 
-Use a gray cell for a period with no staff on duty:
-
-```html
-<td class="empty"></td>
-```
+Confirm each period's availability before publishing. Keep `調整中` on both pages until the schedule is confirmed; `なし` means that no staff member is scheduled, rather than an unconfirmed period.
 
 ## Complete Attendance Schedule
 
-The following Monday-to-Friday, Period 1-to-5 template can be copied directly. Every white cell contains a `.people` container. Paste staff member blocks into the appropriate containers. For a period with no staff on duty, replace the complete white `<td>...</td>` with `<td class="empty"></td>`.
+The example below is the confirmed 2026 fall schedule, Monday to Friday and Period 1 to 5. For a new semester, replace the availability in every cell with the confirmed schedule, then copy the same table to both pages. Give the schedule heading `id="attendance-heading"` so the table's `aria-labelledby` points to it. Keep `scope="col"` on weekday headers and `scope="row"` on period headers.
 
 ```html
-<div class="table-wrap">
-  <table class="schedule">
+<div class="attendance-table-wrap">
+  <table class="attendance-table" aria-labelledby="attendance-heading">
     <thead>
       <tr>
-        <th></th>
-        <th>月</th>
-        <th>火</th>
-        <th>水</th>
-        <th>木</th>
-        <th>金</th>
+        <th scope="col">時限</th>
+        <th scope="col">月</th>
+        <th scope="col">火</th>
+        <th scope="col">水</th>
+        <th scope="col">木</th>
+        <th scope="col">金</th>
       </tr>
     </thead>
     <tbody>
-      <!-- Period 1: Monday, Tuesday, Wednesday, Thursday, Friday -->
       <tr>
-        <td>1限</td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
+        <th scope="row">1限</th>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td class="attendance-unavailable">なし</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
       </tr>
-
-      <!-- Period 2: Monday, Tuesday, Wednesday, Thursday, Friday -->
       <tr>
-        <td>2限</td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
+        <th scope="row">2限</th>
+        <td>あり</td>
+        <td>あり</td>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
       </tr>
-
-      <!-- Period 3: Monday, Tuesday, Wednesday, Thursday, Friday -->
       <tr>
-        <td>3限</td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
+        <th scope="row">3限</th>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
       </tr>
-
-      <!-- Period 4: Monday, Tuesday, Wednesday, Thursday, Friday -->
       <tr>
-        <td>4限</td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
+        <th scope="row">4限</th>
+        <td>あり</td>
+        <td>あり</td>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
       </tr>
-
-      <!-- Period 5: Monday, Tuesday, Wednesday, Thursday, Friday -->
       <tr>
-        <td>5限</td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
-        <td><div class="people"><!-- Staff member blocks --></div></td>
+        <th scope="row">5限</th>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td>あり</td>
+        <td class="attendance-unavailable">なし</td>
+        <td class="attendance-unavailable">なし</td>
       </tr>
     </tbody>
   </table>
@@ -249,6 +145,6 @@ The following Monday-to-Friday, Period 1-to-5 template can be copied directly. E
 2. Update the member profile cards in `pages/tasa.html`.
 3. Add new member photos to `upload/tasa_profile/`, then verify each filename's capitalization and extension.
 4. While the attendance schedule is being finalized, display `調整中` on both pages.
-5. After the schedule is finalized, copy the CSS and complete table from this file into both pages.
-6. Enter exactly the same staff members and times on both pages.
+5. After the schedule is finalized, copy the complete table into both pages, using the shared styles in `style/main.css`.
+6. Enter exactly the same `あり`/`なし` values for every weekday and period on both pages.
 7. Check both pages at desktop and mobile widths in a browser.
