@@ -89,7 +89,7 @@ The **コラム** section was added under **学習コンテンツ** in **Novembe
 | File / directory | Purpose |
 | ---------------- | ------- |
 | `index.html` | Homepage entry under `#learning-content`; links to `pages/column.html` |
-| `img/icons/column.png` | Homepage card illustration; `column.svg` is the editable source |
+| `upload/column.png` | Homepage card illustration; `img/icons/column.svg` is the editable source. The PNG is stored directly in `upload/` because the server's `img/icons/` directory does not allow student editors to create files. |
 | `pages/column.html` | Article index; add a title and hyperlink here for each new article |
 | `pages/columns/` | Individual article pages, one HTML file per article |
 | `style/main.css` | Shared column styles: `.column-content`, `.column-list`, `.column-article`, and `.column-translation` |
