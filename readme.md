@@ -80,6 +80,103 @@ If you run into technical issues, ask a knowledgeable colleague, contact the ITC
 - To make images inside an article scale responsively to the article width, add `class="container-fluid"` to the `<img>` element.
 - PDFs and supplementary images for news articles go in the appropriate subdirectory under `news_upload/` (see directory structure below).
 
+## Updating Columns (コラム) — Added November 2026
+
+The **コラム** section was added under **学習コンテンツ** in **November 2026**. It contains reading material about Chinese language, culture, and society, with Chinese originals and Japanese and English translations. The initial collection contains 13 articles.
+
+### Files to Maintain
+
+| File / directory | Purpose |
+| ---------------- | ------- |
+| `index.html` | Homepage entry under `#learning-content`; links to `pages/column.html` |
+| `img/icons/column.svg` | Homepage card illustration |
+| `pages/column.html` | Article index; add a title and hyperlink here for each new article |
+| `pages/columns/` | Individual article pages, one HTML file per article |
+| `style/main.css` | Shared column styles: `.column-content`, `.column-list`, `.column-article`, and `.column-translation` |
+
+### Adding or Updating an Article — For Student Web Editors
+
+Follow the branch and PR review process in [Updating the Site](#updating-the-site).
+
+1. Obtain the approved article text and any translations from the teacher. Preserve the wording, paragraph breaks, author credits, translator credits, and pronunciation annotations. Do not invent missing translations or author names.
+2. Copy an existing article, such as `pages/columns/linguistic-diversity.html`, to a new file in the **same directory**. Use a short, unique filename with lowercase English letters and hyphens, such as `example-topic.html`.
+3. Update the `<title>` in the `<head>` to `ARTICLE TITLE | SFC中国語研究室`. Replace the entire `<main>...</main>` block with the article template below and fill in the approved content. Keep the existing navigation, CSS imports, footer, and scripts.
+4. In `pages/column.html`, add one list-item block inside `<ul class="list-unstyled column-list">`. Use the index-entry template below. Do not create a second list or group entries by teacher.
+5. For an existing article, edit its HTML file directly. If the title changes, also update the index entry. If the filename changes, update its link in `pages/column.html`.
+6. Preview the index and article on desktop and mobile. Verify the title link, both return links, translation expansion, paragraph layout, and any pronunciation annotations before submitting the PR.
+
+**Notes:**
+
+- Adding an article normally requires only the article file and `pages/column.html`; the homepage card is shared by all articles.
+- Keep the index as titles with hyperlinks, without grouping entries by teacher.
+- Paths are relative to each HTML file. From `pages/column.html`, link to `columns/example-topic.html`. From an article in `pages/columns/`, link back to `../column.html`; the homepage, logo, and shared CSS use `../../index.html`, `../../china-logo.png`, and `../../style/main.css`.
+- Use one `<p>` per paragraph and `<h4>` for subsection headings. Keep author and translator credits in their corresponding language sections.
+- If a translation has not been supplied, omit its entire `<details>...</details>` block. Do not publish template placeholders.
+- Keep translation sections collapsed by default (no `open` attribute). Native `<details>` elements work without additional JavaScript.
+- Escape literal `&`, `<`, and `>` in article text as `&amp;`, `&lt;`, and `&gt;`. Use `<ruby>漢字<rt>reading</rt></ruby>` for pronunciation annotations when present in the source.
+- Keep the existing Bootstrap classes and shared column styles for a consistent appearance. Word source files are not required for the web page to work.
+
+### Index-Entry Template
+
+Insert this inside the existing list in `pages/column.html`. Replace the filename and titles. The Japanese subtitle line is optional; omit it if it is unavailable or repeats the main title.
+
+```html
+<li class="py-3 border-bottom">
+  <a href="columns/example-topic.html">ARTICLE TITLE</a>
+  <span class="d-block text-muted small">JAPANESE SUBTITLE</span>
+</li>
+```
+
+### Article-Content Template
+
+This replaces **only the `<main>...</main>` block** of the copied article, not the entire HTML file. Replace all uppercase placeholders with the approved text and duplicate paragraph elements as needed.
+
+```html
+<main class="container col-12 col-xl-10 column-content pb-5">
+  <p class="mt-4"><a href="../column.html">コラム一覧に戻る</a></p>
+  <article class="column-article">
+    <h1>ARTICLE TITLE</h1>
+    <section lang="zh-Hans" aria-labelledby="original-heading">
+      <h2 id="original-heading">中国語（原文）</h2>
+      <h3>CHINESE TITLE</h3>
+      <p>CHINESE PARAGRAPH</p>
+      <p>AUTHOR CREDIT AS PROVIDED</p>
+    </section>
+
+    <details class="column-translation mt-4 border rounded" lang="ja">
+      <summary>日本語訳</summary>
+      <div class="p-3">
+        <h3>JAPANESE TITLE</h3>
+        <p>JAPANESE PARAGRAPH</p>
+        <p>TRANSLATOR CREDIT AS PROVIDED</p>
+      </div>
+    </details>
+
+    <details class="column-translation mt-4 border rounded" lang="en">
+      <summary>English</summary>
+      <div class="p-3">
+        <h3>ENGLISH TITLE</h3>
+        <p>ENGLISH PARAGRAPH</p>
+        <p>TRANSLATOR CREDIT AS PROVIDED</p>
+      </div>
+    </details>
+  </article>
+  <p class="mt-4"><a href="../column.html">コラム一覧に戻る</a></p>
+</main>
+```
+
+### Local Preview
+
+From the repository root, run:
+
+```bash
+python3 -m http.server 8000 --bind 127.0.0.1
+```
+
+Open [the column index](http://127.0.0.1:8000/pages/column.html) in your browser, then click the new article. Also check the homepage **学習コンテンツ → コラム** card. Press `Ctrl+C` in the terminal to stop the preview server.
+
+This preview is local to your computer. Publishing still follows the existing GitHub review and server-update workflow.
+
 ## Semester Update Timeline
 
 The following is a checklist of recurring homepage maintenance tasks organized by time of year. Use this as a reference at the start of each semester.
@@ -216,6 +313,8 @@ website/
 │   └── tasa_boshu/         # TASA recruitment flyers
 │
 ├── pages/                  # Permanent (non-news) content pages
+│   ├── column.html         # Column index (added November 2026)
+│   ├── columns/            # Individual multilingual column articles
 │   ├── listening/          # Listening exercise pages (listening*.html)
 │   ├── words/              # Vocabulary pages (words*.html)
 │   └── *.html              # Other permanent pages (teachers, courses, lab, tasa, etc.)
